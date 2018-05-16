@@ -13,6 +13,10 @@ export class ModalComponent implements OnInit {
   
   @Input() modalData:string;
   
+  ngOnInit(){
+    
+  }
+  
   ngOnChanges(){
     if(this.modalData !== undefined){
      this.openModal(this.el)

@@ -1,6 +1,6 @@
 
-<table class="table table-striped table-bordered .table-hover">
-  <thead class="thead-dark">
+<table class="table table-bordered ">
+  <thead>
     <tr>
     <th scope="col">Alert Id</th>
     <th scope="col">Alert Time</th>
@@ -11,8 +11,8 @@
     <th scope="col">Severity</th>
     </tr>
   </thead>
-  <tbody *ngFor="let alert of alerts">
-    <tr (click)="chooseAlert(alert)">
+  <tbody>
+    <tr *ngFor="let alert of alerts" (click)="chooseAlert(alert)">
         <th scope="row">{{alert.AlertId}}</th>
             <td>{{alert.AlertTime}}</td> 
             <td>{{alert.ClientCountry}}</td>

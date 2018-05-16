@@ -3,10 +3,14 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-3">
-      
+    <div class="col-4">
+      <h2>Stats</h2>
+      <app-stats>
+        
+      </app-stats>
     </div>
-    <div class="col-9">
+    <div class="col-8">
+      <h2>Data Table</h2>
       <alert-table [modalData]="modalData" (updateModal)="updateModalData($event)">
       </alert-table>
       <app-modal [modalData]="modalData" (updateModal)="updateModalData($event)">

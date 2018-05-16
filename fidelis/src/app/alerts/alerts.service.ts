@@ -12,12 +12,10 @@ export class AlertsService {
 
   constructor(private http:HttpClient) { }
   
-  getAlerts():Observable<Alert[]>{
+  getAlerts(){
     return this.http.get('../../assets/alerts.json')
   }
   
-  randomFunction():null{
-    return 5;
-  }
+
   
 }

@@ -10,12 +10,12 @@ import {Alert} from '../alerts/alert';
 export class TableComponent implements OnInit {
   alerts:Alert[];
   selectedAlert:Alert;
-  
+  alertFilter:any;
   @Input() modalData:string = ""
   @Output() updateModal:EventEmitter<Alert> = new EventEmitter<Alert>();
   
   constructor(private alertService:AlertsService) {
-
+      
   }
   
   ngOnInit() {
@@ -24,6 +24,7 @@ export class TableComponent implements OnInit {
     this.alerts = data;
     })
   }
+  
   
   
   chooseAlert(alert:Alert):void{
