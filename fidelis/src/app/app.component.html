@@ -1,3 +1,16 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<alert-table></alert-table>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3">
+      
+    </div>
+    <div class="col-9">
+      <alert-table [modalData]="modalData" (updateModal)="updateModalData($event)">
+      </alert-table>
+      <app-modal [modalData]="modalData" (updateModal)="updateModalData($event)">
+      </app-modal>
+    </div>
+  </div>
+</div>

@@ -1,21 +1,5 @@
-<!--<table *ngFor="let alert of alerts" style="width:100%">-->
-<!--  <tr>-->
-<!--    <th>Alert Id</th>-->
-<!--    <th>Alert Time</th>-->
-<!--    <th>Client Country</th>-->
-<!--    <th>Client IP</th>-->
-<!--    <th>Protocol</th>-->
-<!--    <th>Server IP</th>-->
-<!--    <th>Severity</th>-->
-<!--  </tr>-->
-<!--  <tr>-->
-<!--    <td>{{alert.AlertId}}</td>-->
 
-<!--  </tr>-->
-<!--</table>-->
-
-
-<table class="table">
+<table class="table table-striped table-bordered .table-hover">
   <thead class="thead-dark">
     <tr>
     <th scope="col">Alert Id</th>
@@ -28,7 +12,7 @@
     </tr>
   </thead>
   <tbody *ngFor="let alert of alerts">
-    <tr>
+    <tr (click)="chooseAlert(alert)">
         <th scope="row">{{alert.AlertId}}</th>
             <td>{{alert.AlertTime}}</td> 
             <td>{{alert.ClientCountry}}</td>

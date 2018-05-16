@@ -5,15 +5,20 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import { TableComponent } from './table/table.component';
 import {AlertsService} from './alerts/alerts.service';
-
+import { ModalComponent } from './modal/modal.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { ModalHelperComponent } from './modal/modal-helper/modal-helper.component';
 @NgModule({
   declarations: [
     AppComponent,
-    TableComponent
+    TableComponent,
+    ModalComponent,
+    ModalHelperComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    ModalModule.forRoot()
   ],
   providers: [AlertsService],
   bootstrap: [AppComponent]

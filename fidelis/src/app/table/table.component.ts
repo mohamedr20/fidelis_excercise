@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input, Output,EventEmitter } from '@angular/core';
 import {AlertsService} from '../alerts/alerts.service';
 import {Alert} from '../alerts/alert';
+
 @Component({
   selector: 'alert-table',
   templateUrl: './table.component.html',
@@ -8,6 +9,11 @@ import {Alert} from '../alerts/alert';
 })
 export class TableComponent implements OnInit {
   alerts:Alert[];
+  selectedAlert:Alert;
+  
+  @Input() modalData:string = ""
+  @Output() updateModal:EventEmitter<Alert> = new EventEmitter<Alert>();
+  
   constructor(private alertService:AlertsService) {
 
   }
@@ -16,12 +22,13 @@ export class TableComponent implements OnInit {
     this.alertService.getAlerts()
     .subscribe((data)=>{
     this.alerts = data;
-    console.log(this.alerts)
     })
   }
-
-  getHeros():void{
-    this.alertService.getAlerts()
-    .subscribe(alerts => this.alerts = alerts);
+  
+  
+  chooseAlert(alert:Alert):void{
+    this.selectedAlert = alert;
+    this.updateModal.emit(this.selectedAlert)
   }
+
 }

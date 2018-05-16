@@ -1,0 +1,20 @@
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title center">Alert Details</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+   <ul>
+       <li>Alert Id: {{modalData.AlertId}}</li>
+       <li>Alert Time: {{modalData.AlertTime}} </li>
+       <li>Client Country: {{modalData.ClientCountry}}</li>
+       <li>Client IP: {{modalData.ClientIP}} </li>
+       <li>Protocol: {{modalData.Protocol}} </li>
+       <li>Server IP: {{modalData.ServerIP}} </li>
+       <li>Severity: {{modalData.Severity}} </li>
+   </ul>
+  </div>
+</ng-template>
