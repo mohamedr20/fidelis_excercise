@@ -1,12 +1,24 @@
 <div>
   <div style="display: block">
-    <canvas baseChart height="400px"
-            [datasets]="barChartData"
-            [labels]="barChartLabels"
-            [options]="barChartOptions"
-            [legend]="barChartLegend"
-            [chartType]="barChartType"
-            (chartHover)="chartHovered($event)"
-            (chartClick)="chartClicked($event)"></canvas>
+    <canvas baseChart height="200px"
+            [datasets]="severityBarChartData"
+            [labels]="severityBarChartLabels"
+            [options]="severityBarChartOptions"
+            [legend]="severityBarChartLegend"
+            [chartType]="severityBarChartType">
+    </canvas>
+  </div>
+</div>
+
+<div>
+  <div style="display:block">
+        <canvas baseChart height="200px"
+            [datasets]="protocolBarChartData"
+            [labels]="protocolBarChartLabels"
+            [options]="protocolBarChartOptions"
+            [legend]="protocolBarChartLegend"
+            [chartType]="protocolBarChartType"
+            >
+    </canvas>
   </div>
 </div>

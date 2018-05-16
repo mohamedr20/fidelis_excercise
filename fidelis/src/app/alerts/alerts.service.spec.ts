@@ -1,15 +1,7 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { inject,async,getTestBed, TestBed } from '@angular/core/testing';
+import {BaseRequestOptions,Http,Response,ResponseOptions,XHRBackend} from '@angular/http';
+import {MockBackend,MockConnection} from '@angular/http/testing';
+import { AlertService } from './alerts.service';
 
-import { AlertsService } from './alerts.service';
 
-describe('AlertsService', () => {
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [AlertsService]
-    });
-  });
 
-  it('should be created', inject([AlertsService], (service: AlertsService) => {
-    expect(service).toBeTruthy();
-  }));
-});

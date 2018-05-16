@@ -1,3 +1,4 @@
+//Alert Data Model
 export class Alert {
     alertId:number;
     alertTime:string;

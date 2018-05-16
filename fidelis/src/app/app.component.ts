@@ -7,7 +7,12 @@ import {Alert} from './alerts/alert';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  modalData:any;
+  selectedAlert:any; 
+  
+  //Once the modalData is updated it is send back down the the modal component
+  @Output() updateModal:EventEmitter<Alert> = new EventEmitter<Alert>();
+  
   updateModalData(event) {
     this.modalData = event;
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit,Input, Output,EventEmitter } from '@angular/core';
-import {AlertsService} from '../alerts/alerts.service';
+import {AlertService} from '../alerts/alerts.service';
 import {Alert} from '../alerts/alert';
 
 @Component({
@@ -8,17 +8,19 @@ import {Alert} from '../alerts/alert';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
-  alerts:Alert[];
+
+  alerts:any;
   selectedAlert:Alert;
-  alertFilter:any;
+  //Accepting the inital undefined modalData variable from the parent app component
   @Input() modalData:string = ""
   @Output() updateModal:EventEmitter<Alert> = new EventEmitter<Alert>();
   
-  constructor(private alertService:AlertsService) {
+  constructor(private alertService:AlertService) {
       
   }
   
   ngOnInit() {
+    //Fetching the array of alerts from the service
     this.alertService.getAlerts()
     .subscribe((data)=>{
     this.alerts = data;
@@ -26,7 +28,7 @@ export class TableComponent implements OnInit {
   }
   
   
-  
+  //Picking a row of alerts to send via output
   chooseAlert(alert:Alert):void{
     this.selectedAlert = alert;
     this.updateModal.emit(this.selectedAlert)
